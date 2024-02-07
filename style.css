@@ -1,0 +1,363 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+:root {
+    --bs-orange: #fd7e14;
+}
+
+body {
+    background-color: black !important;
+    color: white !important;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+.title {
+    color: orange;
+    font-weight: bold;
+    font-size: 3rem;
+}
+
+.movie {
+    display: flex;
+    justify-content: center;
+}
+
+.display {
+    text-align: center;
+    margin: 3rem;
+}
+
+.gap-mar {
+    gap: 10rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+/* >>> SECTION FORM <<< */
+.fondo {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: white;
+    background-image: url(images/fond.jpg);
+    background-repeat: no-repeat; /*evita que se repita la img de fondo*/
+    background-size: cover; /*hace que la img se ajuste al espacio disponible sin dejar espacio negro o blanco*/
+    background-position: center center; /*hace que la imagen siempre este centrada al tamaño de la pantalla*/
+}
+
+.form-floating input,
+.form-floating label {
+    color: #818080;
+    font-size: 1rem;
+    box-shadow: none !important;
+}
+
+.title-form {
+    width: 30rem;
+    margin: auto;
+}
+
+.title-form h3 {
+    font-weight: bold !important;
+    margin-bottom: 2rem !important;
+}
+
+.form-floating input {
+    width: 30rem !important;
+    margin-bottom: 2rem;
+}
+
+.button-form {
+    background-color: orange;
+    padding: 18px 50px 18px 50px;
+    border-radius: 10px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+@media (max-width: 1168px) {
+    .title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 1168px) {
+    .display {
+        margin: 1rem;
+    }
+
+    .title-form {
+        width: 25rem;
+        margin: auto;
+    }
+
+    .form-floating input {
+        width: 25rem !important;
+        margin-bottom: 2rem;
+    }
+
+    .gap-mar {
+        gap: 5rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 990px) {
+    .gap-mar {
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 942px) {
+    .img img {
+        display: none;
+    }
+}
+
+/* >>> loader <<< */
+.em_bar_bg {
+    height: 5px;
+    width: 90px;
+    background: #e2ecec;
+    margin: 20px auto;
+    position: relative;
+    border-radius: 30px;
+}
+
+.em_bar_bg:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: -2.7px;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background: #f9bb10;
+    -webkit-animation-duration: 3s;
+    animation-duration: 3s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-name: MOVE-BG;
+    animation-name: MOVE-BG;
+}
+
+@-webkit-keyframes MOVE-BG {
+    from {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+
+    to {
+        -webkit-transform: translateX(88px);
+        transform: translateX(88px);
+    }
+}
+
+@keyframes MOVE-BG {
+    from {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+
+    to {
+        -webkit-transform: translateX(88px);
+        transform: translateX(88px);
+    }
+}
+
+/* >>> Options plans <<< */
+.checkbox {
+    margin-bottom: 2rem;
+    width: 223px;
+    height: 60px;
+    background-color: white;
+    box-shadow: 0 6px 30px rgba(207, 212, 222, 0.3);
+    border-radius: 30px;
+    position: relative;
+    color: black;
+    overflow: hidden;
+}
+
+#checkbox_toggle {
+    display: none;
+}
+
+.checkbox .toggle {
+    width: 100px;
+    height: 50px;
+    position: absolute;
+    border-radius: 30px;
+    left: 5px;
+    cursor: pointer;
+    background-color: orange;
+    box-shadow: 0px 0px 3px rgb(255, 255, 20), 0px 0px 5px rgb(255, 255, 20);
+}
+
+.checkbox .slide {
+    width: 215px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    cursor: pointer;
+}
+
+.checkbox .slide .text {
+    font-size: 16px;
+    text-align: center;
+    font-weight: bold;
+    z-index: 100;
+    cursor: pointer;
+    padding: 20px;
+    padding-right: 2rem;
+}
+
+.check:checked+.checkbox .slide .toggle {
+    transform: translateX(113px);
+    background-color: orange;
+    box-shadow: 0px 0px 3px rgb(255, 255, 20), 0px 0px 5px rgb(255, 255, 20);
+}
+
+/* >>> planes <<< */
+.plan-card {
+    border: 2px solid white;
+    border-radius: 15px;
+    padding: 40px;
+}
+
+.plan-card:hover {
+    border: 2px solid orange;
+}
+
+.precio {
+    color: orange;
+    font-weight: bold;
+}
+
+.fa-check {
+    color: green;
+}
+
+.fa-x {
+    color: red;
+}
+
+.btn-plan {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-plan a {
+    background-color: orange;
+    color: white;
+    padding: 10px 50px 10px 50px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+/* >>> Que dicen los clientes <<< */
+.slider {
+    display: flex;
+    height: auto;
+    width: auto;
+    overflow: hidden;
+    align-items: center;
+}
+
+.slider .slide-track {
+    display: flex;
+    animation: scroll 35s linear infinite;
+    -webkit-animation: scroll 35s linear infinite;
+    width: calc(240px * 10);
+}
+
+.slider .slide {
+    display: flex;
+}
+
+span {
+    font-size: 13px;
+    color: orange;
+}
+
+.slider .slide .card-testi {
+    width: 25rem;
+    height: 12rem;
+    padding: 10px;
+    background-color: rgb(26, 25, 25);
+    cursor: pointer;
+    margin: 30px;
+    border: 2px solid orange;
+    border-radius: 8px;
+}
+
+@keyframes scroll {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+
+    100% {
+        -webkit-transform: translateX(calc(-240px * 5));
+        transform: translateX(calc(-240px * 5));
+    }
+}
+
+.display-center img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    padding-right: 1rem;
+}
+
+.display-center {
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 992px) {
+    .display-center {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.text-center h4 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.col-img img {
+    width: 20%;
+}
+
+@media (max-width: 576px) {
+    .col-img img {
+        width: 24%;
+    }
+}
+
+/* >>> ACORDION DE PREGUNTAS <<< */
+.accordion-item {
+    background-color: rgb(43, 43, 43) !important;
+    color: white !important;
+    border: 0 !important;
+    border-bottom: 1px solid rgb(122, 117, 117) !important;
+}
+
+.accordion-button {
+    background-color: rgb(43, 43, 43) !important;
+    color: white !important;
+    font-weight: bold;
+    box-shadow: none !important;
+}
